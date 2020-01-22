@@ -12,7 +12,7 @@
     <div class="choice">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 d-flex mb-2"
-                *ngFor="let choice of step.choices | orderBy: 'choice.answer':false">
+                *ngFor="let choice of step.choices | sortBy">
                 <button class="btn btn-custom btn-lg btn-block mr-2"
                     (click)="handleChoice(choice.id)">{{choice.answer}}</button>
             </div>

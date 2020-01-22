@@ -12,8 +12,8 @@ import { StoryStepComponent } from './components/story-step/story-step.component
 import { DecisionViewerComponent } from './components/decision-viewer/decision-viewer.component';
 
 import { OrgChartModule } from '../orgchart/org-chart.module';
-import { OrderModule } from 'ngx-order-pipe';
 import { ErrorComponent } from './error/error.component';
+import { SortByPipe } from './pipes/sort-by.pipe';
 
 @NgModule({
   declarations: [
@@ -22,14 +22,14 @@ import { ErrorComponent } from './error/error.component';
     StoryRunnerComponent,
     StoryStepComponent,
     DecisionViewerComponent,
-    ErrorComponent
+    ErrorComponent,
+    SortByPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    OrgChartModule,
-    OrderModule
+    OrgChartModule
   ],
   providers: [RequestService, StoryService],
   bootstrap: [AppComponent]
