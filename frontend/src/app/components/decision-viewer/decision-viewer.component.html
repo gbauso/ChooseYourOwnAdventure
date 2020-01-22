@@ -1,0 +1,19 @@
+<div *ngIf="loading" class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<div *ngIf="!loading">
+    <div class="path-title">
+        <h1 class="text-center">Your Path</h1>
+    </div>
+    
+    <div class="chart-wrapper">
+        <angular-org-chart *ngIf="!loading" id="orgChartId" [highlight]="execution.highlight" [data]="execution.step"></angular-org-chart>
+    </div>
+    
+    <div class="fixed-bottom back">
+        <a [routerLink]="['']" class="btn btn-secondary">Back</a>
+    </div>
+</div>

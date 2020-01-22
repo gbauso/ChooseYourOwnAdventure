@@ -1,0 +1,35 @@
+{
+  "id": "37f45020-fd43-417c-9943-1fbe0254a32c",
+  "title": "Choose you own path",
+  "rootStep": [
+    {
+      "id": "1974e651-92db-4277-b84c-165a4e74b069",
+      "label": "Do I want a doughnut ?",
+      "first": "true",
+      "Choices": [
+        {
+          "id": "506cd8c7-e5ee-48ae-a629-11c8bccc510f",
+          "answer": "yes",
+          "to": [
+            {
+              "id": "19296136-a4b5-4ac6-933b-95836350d991",
+              "label": "Get it",
+              "first": "false"
+            }
+          ]
+        },
+        {
+          "id": "d39a93ed-e578-4e30-a2f5-4c7321219a64",
+          "answer": "no",
+          "to": [
+            {
+              "id": "1974e651-92db-4277-b84c-165a4e74b069",
+              "label": "Maybe you want an apple",
+              "first": "false"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

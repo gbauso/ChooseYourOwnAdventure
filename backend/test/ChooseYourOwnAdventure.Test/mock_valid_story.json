@@ -1,0 +1,107 @@
+{
+  "id": "37f45020-fd43-417c-9943-1fbe0254a32c",
+  "title": "Choose you own path",
+  "rootStep": [
+    {
+      "id": "1974e651-92db-4277-b84c-165a4e74b069",
+      "label": "Do I want a doughnut ?",
+      "first": "true",
+      "choices": [
+        {
+          "id": "506cd8c7-e5ee-48ae-a629-11c8bccc510f",
+          "answer": "yes",
+          "to": [
+            {
+              "id": "19296136-a4b5-4ac6-933b-95836350d991",
+              "label": "Do I deserve it ? ",
+              "first": "false",
+              "choices": [
+                {
+                  "id": "5bd8b64b-07f8-4212-8757-a24691715cb6",
+                  "answer": "yes",
+                  "to": [
+                    {
+                      "id": "7419194f-796a-441d-a47f-7742f7eb8376",
+                      "label": "Are you sure?",
+                      "first": "false",
+                      "choices": [
+                        {
+                          "id": "d3bec74b-0bcc-475c-9e1a-d252101025d1",
+                          "answer": "yes",
+                          "to": [
+                            {
+                              "id": "c416655c-e30b-4cf7-ad14-92fa9b57df3d",
+                              "label": "Get it",
+                              "first": "false"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "8f39dba4-569c-498b-995c-c9a3758cd5ac",
+                          "answer": "no",
+                          "to": [
+                            {
+                              "id": "ed64e3ad-b2b4-4e9d-8eb1-6a398255f7b6",
+                              "label": "Do jumping jacks first",
+                              "first": "false"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "c12839e5-9c13-4f0d-b848-5d0ee1482c53",
+                  "answer": "no",
+                  "to": [
+                    {
+                      "id": "d7f20406-c29f-4a0c-ad3b-93786fbd64ce",
+                      "label": "Is it a good doughnut ?",
+                      "first": "false",
+                      "choices": [
+                        {
+                          "id": "8f4438f6-94e0-47f8-83af-37619947c18f",
+                          "answer": "yes",
+                          "to": [
+                            {
+                              "id": "056fc944-43b0-48f8-9d01-ab0c5984136c",
+                              "label": "What are you waiting for? Grab it now",
+                              "first": "false"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "e306f0f1-9d4b-44e3-ac80-badb177eb662",
+                          "answer": "no",
+                          "to": [
+                            {
+                              "id": "e51a9a30-2e44-4585-8053-51f14cb48f19",
+                              "label": "Wait 'til you find a sinful, unforgettable doughnut ",
+                              "first": "false"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d39a93ed-e578-4e30-a2f5-4c7321219a64",
+          "answer": "no",
+          "to": [
+            {
+              "id": "1974e651-92db-4277-b84c-165a4e74b069",
+              "label": "Maybe you want an apple ?",
+              "first": "false"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

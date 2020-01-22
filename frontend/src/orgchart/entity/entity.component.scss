@@ -1,0 +1,11 @@
+:host {
+	margin: 0 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.highlighted {
+	color: rgba($color: #29202b, $alpha: 1) !important;
+}
+

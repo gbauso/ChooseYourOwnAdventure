@@ -1,0 +1,24 @@
+<div *ngIf="loading" class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<div *ngIf="!loading">
+    <div class="title">
+        <h1 class="text-center">{{step.question}}</h1>
+    </div>
+
+    <div class="choice">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 d-flex mb-2"
+                *ngFor="let choice of step.choices | orderBy: 'choice.answer':false">
+                <button class="btn btn-custom btn-lg btn-block mr-2"
+                    (click)="handleChoice(choice.id)">{{choice.answer}}</button>
+            </div>
+            <div class="col-12 col-md-6 d-flex" *ngIf="isFinalStep()">
+                <button class="btn btn-custom btn-lg btn-block" (click)="handleChoice(null)">Finish</button>
+            </div>
+        </div>
+    </div>
+</div>
