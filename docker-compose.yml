@@ -1,0 +1,45 @@
+version: "3.4"
+
+services:
+  neo4j:
+    image: neo4j:3.5.14
+    ports:
+      - 7687:7687
+      - 7474:7474
+    volumes:
+      - ./docker/neo4j/data:/data
+      - ./docker/neo4j/plugins:/plugins
+    environment:
+      - NEO4J_AUTH=neo4j/Secr3t
+  api:
+    image: ${DOCKER_REGISTRY-}cyoa-api
+    ports:
+      - 5001:443
+      - 5000:80
+    build:
+      context: .
+      dockerfile: docker/backend/Dockerfile
+    volumes:
+      - ./docker/ssl:/root/.dotnet/https
+    environment:
+      - Neo4J__Uri=http://neo4j:7474/db/data
+      - Neo4J__Username=neo4j
+      - Neo4J__Password=Secr3t
+      - ASPNETCORE_URLS=http://+;https://+
+      - ASPNETCORE_HTTPS_PORT=5001
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=ufo
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/root/.dotnet/https/cert-aspnetcore.pfx
+    depends_on:
+      - neo4j
+  spa:
+    image: ${DOCKER_REGISTRY-}cyoa-spa
+    ports:
+      - 4200:80
+      - 4201:443
+    build:
+      context: .
+      dockerfile: docker/frontend/Dockerfile
+    volumes:
+      - ./docker/ssl:/etc/ssl/private/
+    depends_on:
+      - api

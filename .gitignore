@@ -11,6 +11,7 @@
 e2e_test.*
 *.log
 node_modules
+docker/neo4j/*
 
 # Include when developing application packages.
 pubspec.lock

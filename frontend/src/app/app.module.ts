@@ -14,6 +14,7 @@ import { DecisionViewerComponent } from './components/decision-viewer/decision-v
 import { OrgChartModule } from '../orgchart/org-chart.module';
 import { ErrorComponent } from './error/error.component';
 import { SortByPipe } from './pipes/sort-by.pipe';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { SortByPipe } from './pipes/sort-by.pipe';
     HttpClientModule,
     OrgChartModule
   ],
-  providers: [RequestService, StoryService],
+  providers: [RequestService, StoryService, { provide: 'BACKEND_API_URL', useValue: environment.apiUrl }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
